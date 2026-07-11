@@ -1,0 +1,6 @@
+@Enhanzer.Backend_HostAddress = http://localhost:5294
+
+GET {{Enhanzer.Backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

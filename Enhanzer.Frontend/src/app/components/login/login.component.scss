@@ -1,0 +1,140 @@
+.login-container {
+  display: flex;
+  flex-direction: column; /* Stack vertically */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff; /* White background */
+}
+
+  .company-name-container {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+  .typing-animation {
+    color: #333; /* Changed to black/dark grey */
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0.15em solid #333; /* Typing Cursor */
+    animation: 
+      typing 2s steps(40, end),
+      blink-caret 0.75s step-end infinite;
+  }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #333; }
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  min-height: 350px;
+  padding: 60px 40px;
+  border-radius: 0; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Softened shadow for white on white */
+  background: white;
+
+  .login-form {
+    margin-top: 20px;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  /* Style mat-form-field to look exactly like the provided image */
+  ::ng-deep .custom-underline {
+    /* Remove background color from fill appearance */
+    .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+      background-color: transparent;
+    }
+    
+    /* Make the text input exactly match the baseline */
+    .mdc-text-field {
+      padding: 0;
+    }
+
+    /* Style the prefix icon */
+    .prefix-icon {
+      color: #8a8e8e; /* Changed to blue */
+      margin-right: 15px;
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+    }
+
+    /* The bottom border (inactive) */
+    .mdc-line-ripple::before {
+      border-bottom-color: #ccc !important;
+    }
+
+    /* The bottom border (active/focused) */
+    .mdc-line-ripple::after {
+      border-bottom-color: #1976d2 !important;
+    }
+    
+    /* Hide floating label space if we just want placeholders */
+    .mdc-text-field__label {
+      display: none !important;
+    }
+  }
+
+  .login-button {
+    margin-top: 50px; /* Increased space between password and button */
+    height: 55px; /* Increased height */
+    font-size: 16px;
+    letter-spacing: 1px;
+    background-color: #1976d2; /* Match purchase bill blue */
+    color: white;
+    border-radius: 0; /* Removed border radius */
+    box-shadow: none;
+    transition: background-color 0.2s;
+    
+    &:hover {
+      background-color: #1565c0; /* Darker blue on hover */
+    }
+
+    ::ng-deep .mdc-button__label {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  .error-message {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: #f44336;
+    padding: 12px;
+    font-size: 14px;
+    margin-top: 15px;
+    text-align: center;
+    border: 1px solid #f44336;
+    border-radius: 0; /* Match login style */
+  }
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 600px) {
+  .company-name-container .typing-animation {
+    font-size: 32px; /* Smaller font on mobile */
+  }
+
+  .login-card {
+    max-width: 90%;
+    padding: 40px 20px;
+    min-height: auto;
+  }
+}
